@@ -84,6 +84,10 @@ export const menus: MenuProps[] = [
         title: "Dialog",
         href: "/components/dialog"
       },
+      {
+        title: "Typography",
+        href: "/components/typography"
+      },
     ]
   },
   {
