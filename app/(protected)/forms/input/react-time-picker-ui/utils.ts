@@ -20,6 +20,7 @@ export const generateNumberSlots = ({
   return slots;
 };
 
+// get time portion
 export const getTimePortion = (
   time?: TSelectedTime,
   portion?: "hours" | "minutes" | "seconds"
@@ -39,4 +40,32 @@ export const getTimePortion = (
   } else if (portion === "seconds") {
     return second.toString().padStart(2, "0");
   }
+};
+
+// handle Field Change
+type THandleChangeProps = {
+  value: string;
+  portion: "hours" | "minutes" | "seconds";
+  setSelectedTime: React.Dispatch<React.SetStateAction<TSelectedTime>>;
+  onChange?: (value: TSelectedTime) => void;
+  selectedTime: TSelectedTime;
+};
+export const handleChange = ({
+  value,
+  portion,
+  setSelectedTime,
+  onChange,
+  selectedTime,
+}: THandleChangeProps) => {
+  setSelectedTime((prev) => {
+    const [hours, minutes, seconds] = prev?.split(":") || [];
+    if (portion === "hours") {
+      return `${value}:${minutes}:${seconds}`;
+    } else if (portion === "minutes") {
+      return `${hours}:${value}:${seconds}`;
+    } else if (portion === "seconds") {
+      return `${hours}:${minutes}:${value}`;
+    }
+  });
+  onChange?.(selectedTime);
 };
