@@ -1,18 +1,19 @@
+import { useReactTimePickerContext } from "./ReactTimePickerUiProvider";
 import Slot from "./Slot";
-import { IReactTimePickerUiProps, TSelectedTime } from "./types";
 import { getTimePortion, handleChange } from "./utils";
 
-interface IDropDownPanelProps extends IReactTimePickerUiProps {
-  selectedTime: TSelectedTime;
-  setSelectedTime: React.Dispatch<React.SetStateAction<TSelectedTime>>;
-}
-function DropDownPanel({
-  selectedTime,
-  setSelectedTime,
-  onChange,
-}: IDropDownPanelProps) {
+function DropDownPanel() {
+  const {
+    isOpen,
+    value: selectedTime,
+    onChange,
+    setSelectedTime,
+  } = useReactTimePickerContext();
+  if (!isOpen) {
+    return null;
+  }
   return (
-    <div className="w-full p-4">
+    <div className=" p-4 absolute top-full mt-3 w-full h-fit z-50 border border-slate-200 rounded-md shadow-sm">
       <div className="grid grid-cols-3">
         <Slot
           min={0}

@@ -7,27 +7,25 @@ import React, {
 } from "react";
 import { useLockBodyScroll } from "./hooks/useLockBodyScroll";
 import useClickOutside from "./hooks/useClickOutside";
-
-
-type ReactTimePickerContextType = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  dropdownRef: React.RefObject<HTMLDivElement>;
-};
-
+import {
+  ReactTimePickerContextType,
+  ReactTimePickerUiProviderProps,
+} from "./types";
 
 const ReactTimePickerUiContext = createContext<
   ReactTimePickerContextType | undefined
 >(undefined);
 
-type ReactTimePickerUiProviderProps = {
-  children: ReactNode;
-};
-
 export function ReactTimePickerUiProvider({
   children,
+  label,
+  value,
+  onChange,
+  error,
+  setSelectedTime,
 }: ReactTimePickerUiProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   useLockBodyScroll(isOpen);
@@ -40,6 +38,12 @@ export function ReactTimePickerUiProvider({
     isOpen,
     setIsOpen,
     dropdownRef,
+    toggle,
+    label,
+    value,
+    onChange,
+    error,
+    setSelectedTime,
   };
 
   return (

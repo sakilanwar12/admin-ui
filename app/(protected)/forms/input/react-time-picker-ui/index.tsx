@@ -5,6 +5,7 @@ import type { IReactTimePickerUiProps, TSelectedTime } from "./types";
 import "./style.css";
 import DropDownPanel from "./DropDownPanel";
 import { ReactTimePickerUiProvider } from "./ReactTimePickerUiProvider";
+import Trigger from "./Trigger";
 
 function ReactTimePickerUi({
   label,
@@ -12,17 +13,18 @@ function ReactTimePickerUi({
   onChange,
   error,
 }: IReactTimePickerUiProps) {
-  const [selectedTime, setSelectedTime] = useState<TSelectedTime>(
-    value || "00:00:00"
-  );
+  const [selectedTime, setSelectedTime] = useState<TSelectedTime | null>(value);
 
   return (
-    <ReactTimePickerUiProvider>
-      <DropDownPanel
-        selectedTime={selectedTime}
-        setSelectedTime={setSelectedTime}
-        onChange={onChange}
-      />
+    <ReactTimePickerUiProvider
+      label={label}
+      value={selectedTime}
+      onChange={onChange}
+      setSelectedTime={setSelectedTime}
+      error={error}
+    >
+      <Trigger />
+      <DropDownPanel />
     </ReactTimePickerUiProvider>
   );
 }
