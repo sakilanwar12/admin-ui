@@ -2,11 +2,16 @@
 
 import { useState } from "react";
 import Slot from "./Slot";
-import type { ITimePickerProps, TSelectedTime } from "./types";
+import type { IReactTimePickerUiProps, TSelectedTime } from "./types";
 import { getTimePortion } from "./utils";
 import "./style.css";
 
-function TimePicker({ label, value, onChange, error }: ITimePickerProps) {
+function ReactTimePickerUi({
+  label,
+  value,
+  onChange,
+  error,
+}: IReactTimePickerUiProps) {
   const [selectedTime, setSelectedTime] = useState<TSelectedTime>(value || "");
 
   const handleChange = (
@@ -55,4 +60,4 @@ function TimePicker({ label, value, onChange, error }: ITimePickerProps) {
   );
 }
 
-export default TimePicker;
+export default ReactTimePickerUi;

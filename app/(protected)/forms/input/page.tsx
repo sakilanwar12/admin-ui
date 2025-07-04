@@ -4,8 +4,8 @@ import Card from "@/components/ui/code-card";
 import BasicInput from "./basic-input";
 import SizeInput from "./size-input";
 import { basicInput, sizesInput } from "./source-code";
-import TimePicker from "./time-picker";
-import timePicker from "./time-picker";
+import ReactTimePickerUi from "./react-time-picker-ui";
+
 const InputPage = () => {
   return (
     <div>
@@ -13,7 +13,7 @@ const InputPage = () => {
 
       <div className="grid grid-cols-2 gap-6">
         <Card title="Time Picker" code={""}>
-          <TimePicker
+          <ReactTimePickerUi
             label="Time Picker"
             value="10:30:00"
             onChange={(value) => console.log(value)}
