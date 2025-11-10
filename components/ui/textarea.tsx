@@ -31,27 +31,23 @@ export const textareaVariants = cva(
 );
 
 export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  extends React.ComponentProps<"textarea">,
   VariantProps<typeof textareaVariants> {
   color?: colors;
 }
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, color,  defaultValue, ...props }, ref) => {
-    return (
-        <textarea
-          className={cn(
-            textareaVariants({ color }),
-            className
-          )}
-          ref={ref}
-          {...props}
-        >
-          {defaultValue}
-        </textarea>
-    );
-  }
-);
-Textarea.displayName = "Textarea";
+const Textarea = ({ className, color, defaultValue, ...props }: TextareaProps) => {
+  return (
+    <textarea
+      className={cn(
+        textareaVariants({ color }),
+        className
+      )}
+      {...props}
+    >
+      {defaultValue}
+    </textarea>
+  );
+};
 
 export { Textarea };
