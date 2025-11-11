@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 interface TypographyProps {
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
   id?: string;

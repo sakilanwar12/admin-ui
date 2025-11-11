@@ -16,7 +16,7 @@ export interface ReactTimePickerContextType
     ICommonTypes {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  dropdownRef: React.RefObject<HTMLDivElement>;
+  dropdownRef: React.RefObject<HTMLDivElement | null>;
   toggle: () => void;
 }
 

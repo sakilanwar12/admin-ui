@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "ShopDash",
-  title: "ShopDash",
-  description: "ShopDash Admin Template",
+  name: "AdminUI",
+  title: "AdminUI",
+  description: "AdminUI Admin Template",
   theme: "light",
   isRtl: false,
 }

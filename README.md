@@ -1,10 +1,10 @@
-# ShopDash Admin Dashboard Template
+# AdminUI Admin Dashboard Template
 
 ## Live 
 
-[AdminOcean](https://admin-ocean-53dff57yj-sakilanwar12s-projects.vercel.app/dashboard)
+[AdminUI](https://admin-ocean-53dff57yj-sakilanwar12s-projects.vercel.app/dashboard)
 
-Welcome to the **ShopDash Admin Dashboard Template**! This project is a modern, responsive, and customizable admin dashboard template built with **Next.js**, **Shade CN**, and **Next Themes**. It leverages the power of these technologies to provide a seamless and efficient development experience.
+Welcome to the **AdminUI Admin Dashboard Template**! This project is a modern, responsive, and customizable admin dashboard template built with **Next.js**, **Shade CN**, and **Next Themes**. It leverages the power of these technologies to provide a seamless and efficient development experience.
 
 ## Table of Contents
 
