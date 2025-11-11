@@ -20,7 +20,7 @@ const SiteLogo = ({ className }: { className?: string }) => {
 
         <span className={cn("font-robotoSlab text-lg font-bold hidden md:block",
           { "lg:hidden": collapsed }
-        )}> AdminOcean</span>
+        )}> AdminUI</span>
       </Link>
     </div>
   );

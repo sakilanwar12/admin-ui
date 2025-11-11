@@ -31,39 +31,30 @@ export const inputVariants = cva(
 );
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
+  extends Omit<React.ComponentProps<"input">, "size">,
   VariantProps<typeof inputVariants> {
-
-  color?: colors
-  size?: any;
+  color?: colors;
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      className,
-      type,
-      size,
-      color,
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <div className="flex-1 w-full">
-        <input
-          type={type}
-          className={cn(
-            inputVariants({ color, size }),
-            className
-          )}
-          ref={ref}
-          {...props}
-        />
-      </div>
-    );
-  }
-);
-Input.displayName = "Input";
+const Input = ({
+  className,
+  type,
+  size,
+  color,
+  ...props
+}: InputProps) => {
+  return (
+    <div className="flex-1 w-full">
+      <input
+        type={type}
+        className={cn(
+          inputVariants({ color, size }),
+          className
+        )}
+        {...props}
+      />
+    </div>
+  );
+};
 
 export { Input };
