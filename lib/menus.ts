@@ -29,7 +29,7 @@ export const menus: MenuProps[] = [
     child: [
       {
         title: "Education Apps",
-        href: "education-apps",
+        href: "#",
       }
     ]
   },

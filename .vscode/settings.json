@@ -1,5 +1,13 @@
 {
   "css.validate": false,
   "tailwindCSS.emmetCompletions": true,
-  "cSpell.words": ["apexcharts", "cmdk", "iconify"]
+  "cSpell.words": [
+    "apexcharts",
+    "appex",
+    "appstore",
+    "arcticons",
+    "cmdk",
+    "graphene",
+    "iconify"
+  ]
 }
