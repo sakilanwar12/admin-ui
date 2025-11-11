@@ -6,25 +6,7 @@
 
 Welcome to the **AdminUI Admin Dashboard Template**! This project is a modern, responsive, and customizable admin dashboard template built with **Next.js**, **Shade CN**, and **Next Themes**. It leverages the power of these technologies to provide a seamless and efficient development experience.
 
-## Table of Contents
 
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- Responsive Design
-- Customizable Themes
-- Modular and Reusable Components
-- Dark Mode Support
-- Built with Next.js and Shade CN
-- Easy Configuration with Next Themes
-- Tailwind CSS for Rapid Styling
 
 ## Demo
 
