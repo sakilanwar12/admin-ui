@@ -1,9 +1,7 @@
-
-import { Inter, Roboto_Slab } from 'next/font/google'
+import { Inter, Roboto_Slab } from "next/font/google";
 import "./globals.css";
-import AuthProvider from "@/providers/auth-provider";
 import ThemeProvider from "@/providers/theme-provider";
-
+import MountedProvider from "@/providers/mounted.provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,17 +9,16 @@ export const metadata = {
 };
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
- 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 const jost = Roboto_Slab({
-  subsets: ['latin'],
-  variable: '--font-roboto-slab',
-  display: 'swap',
-})
- 
+  subsets: ["latin"],
+  variable: "--font-roboto-slab",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -30,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jost.variable}`}>
-      <body className="shopdash-app" suppressHydrationWarning={true}>
-        <AuthProvider>
-           <ThemeProvider attribute="class" defaultTheme="light">
+      <body className="adminui-app" suppressHydrationWarning={true}>
+        <MountedProvider>
+          <ThemeProvider attribute="class" defaultTheme="light">
             {children}
           </ThemeProvider>
-        </AuthProvider>
+        </MountedProvider>
       </body>
     </html>
   );
